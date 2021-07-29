@@ -16,26 +16,26 @@ bot.
 """
 
 import logging
-import urllib.request
-from bs4 import BeautifulSoup
+from bestchange import *
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
-class BestChange:
-    def __init__(self):
 
-        self.url = 'https://www.bestchange.ru/privat24-uah-to-sberbank.html'
-
-    def rate(self):
-
-        html = urllib.request.urlopen(self.url).read()
-        soup = BeautifulSoup(html, "html.parser")
-        tags = soup.find_all('td', attrs={'class': 'bi'})
-        result = tags[1].text.strip()
-        return result
-    def print_rate(self):
-        if __name__ == "__main__":
-          answer = BestChange()
-          return answer.rate()
+# class BestChange:
+#     def __init__(self):
+#
+#         self.url = 'https://www.bestchange.ru/privat24-uah-to-sberbank.html'
+#
+#     def rate(self):
+#
+#         html = urllib.request.urlopen(self.url).read()
+#         soup = BeautifulSoup(html, "html.parser")
+#         tags = soup.find_all('td', attrs={'class': 'bi'})
+#         result = tags[1].text.strip()
+#         return result
+#     def print_rate(self):
+#         if __name__ == "__main__":
+#           answer = BestChange()
+#           return answer.rate()
 
 
 # Enable logging
@@ -44,7 +44,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 
 logger = logging.getLogger(__name__)
 
-token = "secret"
+token = "token"
 
 # Define a few command handlers. These usually take the two arguments update and
 # context. Error handlers also receive the raised TelegramError object in error.
@@ -63,7 +63,7 @@ def reply(update, context):
     useranswer = BestChange()
     useranswer.rate()
     useranswer.print_rate()
-    update.message.reply_text("Bestchange.ru |"+useranswer.print_rate() + "\nWebsite2.ru      | ПримерОтвета" + "\nWebsite3.ru      | ПримерОтвета" + "\nWebsite4.ru      | ПримерОтвета" +
+    update.message.reply_text("Bestchange.ru |"+ str(useranswer.print_rate()) + "\nWebsite2.ru      | ПримерОтвета" + "\nWebsite3.ru      | ПримерОтвета" + "\nWebsite4.ru      | ПримерОтвета" +
                               "\nWebsite5.ru      | ПримерОтвета" + "\nWebsite6.ru      | ПримерОтвета" + "\nWebsite7.ru      | ПримерОтвета" + "\nWebsite8.ru      | ПримерОтвета" + "\nWebsite9.ru      | ПримерОтвета" + "\nWebsite10.ru    | ПримерОтвета")
 
 
