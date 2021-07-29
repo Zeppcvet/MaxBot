@@ -44,7 +44,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 
 logger = logging.getLogger(__name__)
 
-token = "token"
+token = "1660361628:AAEazK0emWuRMxczMf7vVvQKMte6ZGk8F_I"
 
 # Define a few command handlers. These usually take the two arguments update and
 # context. Error handlers also receive the raised TelegramError object in error.
@@ -60,14 +60,21 @@ def help(update, context):
 
 def reply(update, context):
     """Reply to the user message."""
-   bestchange-p-to-s = BestChange("https://www.bestchange.ru/privat24-uah-to-sberbank.html")
-    bestchange-p-to-s.rate()
-    bestchange-p-to-s.print_rate()
+    # url_p_to_s = "https://www.bestchange.ru/privat24-uah-to-sberbank.html"
+    # url_s_to_p = "https://www.bestchange.ru/sberbank-to-privat24-uah.html"
+    # tag1 = 'bi'
+    # tag2 = 'fs'
+    # bestchange_p_to_s = BestChange(url_p_to_s)
+    # bestchange_p_to_s.rate()
+    # bestchange_p_to_s.print_rate()
+    bestchange_p_to_s =  BestChange(url_p_to_s).rate(index1, tag_name1, tag_class1)
 
-bestchange-s-to-p = BestChange ("https://www.bestchange.ru/sberbank-to-privat24-uah.html")
-bestchange-s-to-p.rate()
-bestchange-s-to-p.print_rate()
-    update.message.reply_text("Bestchange Privat to Sber |"+ bestchange-p-to-s.print_rate() + "\nBestChange Sber to Privat  |" +  bestchange-s-to-p.print_rate() + "\nWebsite3.ru      | ПримерОтвета" + "\nWebsite4.ru      | ПримерОтвета" +
+    # bestchange_s_to_p = BestChange(url_s_to_p)
+    # bestchange_s_to_p.rate(url_s_to_p)
+    # bestchange_s_to_p.print_rate()
+    bestchange_s_to_p = BestChange(url_s_to_p).rate(index2,tag_name2,tag_class2)
+    bestchange_s_to_m = BestChange(url_s_to_m).rate(index2,tag_name2,tag_class2)
+    update.message.reply_text("Bestchange Privat to Sber |"+ str(bestchange_p_to_s) + "\nBestChange Sber to Privat  |" + str(bestchange_s_to_p) + "\nBestChange Sber to Mono     |" +str(bestchange_s_to_m)  + "\nWebsite4.ru      | ПримерОтвета" +
                               "\nWebsite5.ru      | ПримерОтвета" + "\nWebsite6.ru      | ПримерОтвета" + "\nWebsite7.ru      | ПримерОтвета" + "\nWebsite8.ru      | ПримерОтвета" + "\nWebsite9.ru      | ПримерОтвета" + "\nWebsite10.ru    | ПримерОтвета")
 
 

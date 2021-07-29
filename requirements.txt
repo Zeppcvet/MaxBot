@@ -1,0 +1,20 @@
+https://www.bestchange.ru/privat24-uah-to-sberbank.html
+#comments
+https://www.bestchange.ru/sberbank-to-privat24-uah.html
+#comments
+https://www.bestchange.ru/sberbank-to-monobank.html
+#comments
+https://paysend.com/ru/otpravit-dengi/iz-rossii-v-ukrainu?fromCurrId=643&toCurrId=980
+#webpage is not loading
+
+https://finance.ua/ru/currency#interbank
+# по данным Укрбиллинг --> Покупка Доллары (попробовать распарсить страницу USD)
+
+https://ru.tradingview.com/symbols/USDRUB/
+#цифра в верхнем левом углу (без маленькой цифры)
+
+https://www.binance.com/ru/trade/BTC_BUSD?theme=dark&type=spot
+#цифра в верхнем левом углу (вылезает попап посреди экрана)
+
+https://vilcov.com/?lang=rus
+# нужна часть  (-1.4% от binance) из строки  "Курсы на 30.07.2021: обналичить BTC - 39089$ (-1.4% от binance), купить BTC - 39524$ (-0.3% от binance)"
