@@ -2,9 +2,9 @@ import urllib.request
 from bs4 import BeautifulSoup
 
 class BestChange:
-    def __init__(self):
+    def __init__(self, url):
 
-        self.url = 'https://www.bestchange.ru/privat24-uah-to-sberbank.html'
+        self.url = url
 
     def rate(self):
 

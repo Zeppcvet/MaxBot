@@ -16,7 +16,7 @@ bot.
 """
 
 import logging
-from bestchange import *
+from bestchange_p_to_s import *
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
 
@@ -60,10 +60,14 @@ def help(update, context):
 
 def reply(update, context):
     """Reply to the user message."""
-    useranswer = BestChange()
-    useranswer.rate()
-    useranswer.print_rate()
-    update.message.reply_text("Bestchange.ru |"+ str(useranswer.print_rate()) + "\nWebsite2.ru      | ПримерОтвета" + "\nWebsite3.ru      | ПримерОтвета" + "\nWebsite4.ru      | ПримерОтвета" +
+   bestchange-p-to-s = BestChange("https://www.bestchange.ru/privat24-uah-to-sberbank.html")
+    bestchange-p-to-s.rate()
+    bestchange-p-to-s.print_rate()
+
+bestchange-s-to-p = BestChange ("https://www.bestchange.ru/sberbank-to-privat24-uah.html")
+bestchange-s-to-p.rate()
+bestchange-s-to-p.print_rate()
+    update.message.reply_text("Bestchange Privat to Sber |"+ bestchange-p-to-s.print_rate() + "\nBestChange Sber to Privat  |" +  bestchange-s-to-p.print_rate() + "\nWebsite3.ru      | ПримерОтвета" + "\nWebsite4.ru      | ПримерОтвета" +
                               "\nWebsite5.ru      | ПримерОтвета" + "\nWebsite6.ru      | ПримерОтвета" + "\nWebsite7.ru      | ПримерОтвета" + "\nWebsite8.ru      | ПримерОтвета" + "\nWebsite9.ru      | ПримерОтвета" + "\nWebsite10.ru    | ПримерОтвета")
 
 
