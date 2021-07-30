@@ -16,6 +16,7 @@ bot.
 """
 
 import logging
+import os
 from bestchange_p_to_s import *
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
@@ -44,7 +45,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 
 logger = logging.getLogger(__name__)
 
-token = "token"
+token = os.environ['STATIC_TOKEN_VAR']
 
 # Define a few command handlers. These usually take the two arguments update and
 # context. Error handlers also receive the raised TelegramError object in error.
@@ -56,6 +57,7 @@ def start(update, context):
 def help(update, context):
     """Send a message when the command /help is issued."""
     update.message.reply_text('Help!')
+
 
 
 def reply(update, context):
@@ -74,8 +76,11 @@ def reply(update, context):
     # bestchange_s_to_p.print_rate()
     bestchange_s_to_p = BestChange(url_s_to_p).rate(index2,tag_name2,tag_class2)
     bestchange_s_to_m = BestChange(url_s_to_m).rate(index2,tag_name2,tag_class2)
-    update.message.reply_text("Bestchange Privat to Sber |"+ str(bestchange_p_to_s) + "\nBestChange Sber to Privat  |" + str(bestchange_s_to_p) + "\nBestChange Sber to Mono     |" +str(bestchange_s_to_m)  + "\nWebsite4.ru      | ПримерОтвета" +
-                              "\nWebsite5.ru      | ПримерОтвета" + "\nWebsite6.ru      | ПримерОтвета" + "\nWebsite7.ru      | ПримерОтвета" + "\nWebsite8.ru      | ПримерОтвета" + "\nWebsite9.ru      | ПримерОтвета" + "\nWebsite10.ru    | ПримерОтвета")
+    update.message.reply_text("Bestchange Privat to Sber |"+ str(bestchange_p_to_s) + "\nBestChange Sber to Privat  |"
+                              + str(bestchange_s_to_p) + "\nBestChange Sber to Mono     |" +str(bestchange_s_to_m)  + "\nWebsite4.ru      | ПримерОтвета" +
+                              "\nWebsite5.ru      | ПримерОтвета" + "\nWebsite6.ru      | ПримерОтвета" + "\nWebsite7.ru      | ПримерОтвета" +
+                              "\nWebsite8.ru      | ПримерОтвета" + "\nWebsite9.ru      | ПримерОтвета" + "\nWebsite10.ru    | ПримерОтвета"
+                              )
 
 
 def error(update, context):
